@@ -1476,7 +1476,7 @@ export default function PlannerPage() {
         <motion.div
           key={activeView}
           custom={direction}
-          variants={zoomVariants}
+          variants={zoomVariants as any}
           initial="initial"
           animate="animate"
           exit="exit"

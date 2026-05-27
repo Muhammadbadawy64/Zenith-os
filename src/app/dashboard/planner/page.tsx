@@ -28,13 +28,13 @@ const zoomVariants = {
     opacity: 1,
     scale: 1,
     filter: "blur(0px)",
-    transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }
+    transition: { duration: 0.3, ease: "easeOut" }
   },
   exit: (direction: number) => ({
     opacity: 0,
     scale: direction > 0 ? 0.95 : 1.05,
     filter: "blur(4px)",
-    transition: { duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }
+    transition: { duration: 0.2, ease: "easeOut" }
   })
 };
 

@@ -1,0 +1,267 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Brainhance / Zenith Custom Colors */
+  --color-brainhance-purple: #8B5CF6;
+  --color-brainhance-violet: #A855F7;
+  --color-brainhance-deep: #6D28D9;
+  --color-brainhance-glow: #C084FC;
+  --color-brainhance-dark: #0F0A1A;
+  --color-brainhance-surface: #1A1128;
+  --color-brainhance-card: #221738;
+  --color-brainhance-success: #34D399;
+  --color-brainhance-warning: #FBBF24;
+  --color-brainhance-danger: #F87171;
+  --color-brainhance-info: #60A5FA;
+
+  /* Zenith aliases (same palette, rebranded) */
+  --color-zenith-purple: #8B5CF6;
+  --color-zenith-violet: #A855F7;
+  --color-zenith-glow: #C084FC;
+  --color-zenith-success: #34D399;
+}
+
+/* Light Mode (Secondary) */
+:root {
+  --background: oklch(0.985 0.002 300);
+  --foreground: oklch(0.145 0.02 280);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0.02 280);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0.02 280);
+  --primary: oklch(0.541 0.24 293);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.95 0.02 290);
+  --secondary-foreground: oklch(0.205 0.02 280);
+  --muted: oklch(0.95 0.01 290);
+  --muted-foreground: oklch(0.5 0.02 280);
+  --accent: oklch(0.92 0.04 290);
+  --accent-foreground: oklch(0.205 0.02 280);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.9 0.02 290);
+  --input: oklch(0.9 0.02 290);
+  --ring: oklch(0.541 0.24 293);
+  --chart-1: oklch(0.541 0.24 293);
+  --chart-2: oklch(0.6 0.2 340);
+  --chart-3: oklch(0.7 0.15 200);
+  --chart-4: oklch(0.75 0.15 150);
+  --chart-5: oklch(0.65 0.2 50);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.97 0.01 290);
+  --sidebar-foreground: oklch(0.145 0.02 280);
+  --sidebar-primary: oklch(0.541 0.24 293);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.92 0.04 290);
+  --sidebar-accent-foreground: oklch(0.205 0.02 280);
+  --sidebar-border: oklch(0.9 0.02 290);
+  --sidebar-ring: oklch(0.541 0.24 293);
+}
+
+/* Dark Mode (Default for Brainhance) */
+.dark {
+  --background: oklch(0.13 0.03 290);
+  --foreground: oklch(0.95 0.01 290);
+  --card: oklch(0.18 0.04 290);
+  --card-foreground: oklch(0.95 0.01 290);
+  --popover: oklch(0.18 0.04 290);
+  --popover-foreground: oklch(0.95 0.01 290);
+  --primary: oklch(0.65 0.24 293);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.22 0.04 290);
+  --secondary-foreground: oklch(0.95 0.01 290);
+  --muted: oklch(0.22 0.04 290);
+  --muted-foreground: oklch(0.65 0.03 290);
+  --accent: oklch(0.25 0.06 290);
+  --accent-foreground: oklch(0.95 0.01 290);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.3 0.05 290);
+  --input: oklch(0.25 0.05 290);
+  --ring: oklch(0.65 0.24 293);
+  --chart-1: oklch(0.65 0.24 293);
+  --chart-2: oklch(0.6 0.2 340);
+  --chart-3: oklch(0.7 0.15 200);
+  --chart-4: oklch(0.75 0.15 150);
+  --chart-5: oklch(0.65 0.2 50);
+  --sidebar: oklch(0.16 0.04 290);
+  --sidebar-foreground: oklch(0.95 0.01 290);
+  --sidebar-primary: oklch(0.65 0.24 293);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.22 0.05 290);
+  --sidebar-accent-foreground: oklch(0.95 0.01 290);
+  --sidebar-border: oklch(0.3 0.05 290);
+  --sidebar-ring: oklch(0.65 0.24 293);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* Brainhance Glass Effect */
+.glass {
+  background: rgba(139, 92, 246, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.glass-strong {
+  background: rgba(139, 92, 246, 0.15);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+.glass-dropdown {
+  background: rgba(15, 10, 30, 0.92);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+/* Brainhance Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #8B5CF6, #A855F7, #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Brainhance Glow Effects */
+.glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3), 0 0 60px rgba(139, 92, 246, 0.1);
+}
+
+.glow-purple-strong {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.5), 0 0 80px rgba(139, 92, 246, 0.2);
+}
+
+/* Animated gradient background */
+.bg-gradient-animated {
+  background: linear-gradient(-45deg, #0F0A1A, #1A1128, #2D1B69, #1A1128);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating particles animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-20px) rotate(5deg); }
+  66% { transform: translateY(10px) rotate(-3deg); }
+}
+
+/* Pulse glow animation */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.6); }
+}
+
+/* Screen shake for distraction alerts */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Submarine dive animation */
+@keyframes submarine-dive {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(30px) rotate(-10deg); }
+  50% { transform: translateY(15px) rotate(5deg); }
+  75% { transform: translateY(40px) rotate(-5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
